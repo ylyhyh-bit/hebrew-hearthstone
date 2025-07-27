@@ -2,41 +2,73 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Premium Hebrew Family Tree Design System */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Premium Background System */
+    --background: 240 15% 98%;
+    --foreground: 220 25% 15%;
 
+    /* Elegant Card System */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 220 25% 15%;
 
+    /* Glassmorphism Effects */
+    --glass-background: 0 0% 100% / 0.85;
+    --glass-border: 220 15% 85%;
+    --glass-shadow: 220 25% 15% / 0.1;
+
+    /* Family Tree Colors */
+    --male-primary: 210 85% 65%;
+    --male-secondary: 210 75% 85%;
+    --male-glass: 210 85% 65% / 0.1;
+    
+    --female-primary: 340 75% 70%;
+    --female-secondary: 340 65% 85%;
+    --female-glass: 340 75% 70% / 0.1;
+
+    /* Neutral Heritage Colors */
+    --heritage-gold: 45 85% 65%;
+    --heritage-bronze: 25 55% 55%;
+    --heritage-sage: 120 25% 65%;
+
+    /* Premium Gradients */
+    --gradient-bg: linear-gradient(135deg, hsl(240 20% 99%), hsl(220 15% 96%));
+    --gradient-male: linear-gradient(135deg, hsl(var(--male-secondary)), hsl(var(--male-primary)));
+    --gradient-female: linear-gradient(135deg, hsl(var(--female-secondary)), hsl(var(--female-primary)));
+    --gradient-connection: linear-gradient(90deg, hsl(var(--heritage-bronze)), hsl(var(--heritage-gold)));
+
+    /* Premium Shadows */
+    --shadow-elegant: 0 8px 32px -8px hsl(var(--glass-shadow)), 0 0 0 1px hsl(var(--glass-border));
+    --shadow-floating: 0 12px 40px -12px hsl(220 25% 15% / 0.25), 0 8px 24px -8px hsl(220 25% 15% / 0.15);
+    --shadow-glow-male: 0 0 24px hsl(var(--male-primary) / 0.3);
+    --shadow-glow-female: 0 0 24px hsl(var(--female-primary) / 0.3);
+
+    /* Interactive States */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 220 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 220 25% 15%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 25% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 15% 45%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 220 15% 94%;
+    --accent-foreground: 220 25% 15%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 75% 65%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 220 15% 90%;
+    --input: 220 15% 95%;
+    --ring: 220 25% 15%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,33 +88,48 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark Premium Background */
+    --background: 220 25% 8%;
+    --foreground: 220 15% 92%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Dark Glassmorphism */
+    --card: 220 25% 12%;
+    --card-foreground: 220 15% 92%;
+    --glass-background: 220 25% 12% / 0.85;
+    --glass-border: 220 15% 25%;
+    --glass-shadow: 220 15% 5% / 0.3;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Dark Family Colors */
+    --male-primary: 210 75% 55%;
+    --male-secondary: 210 65% 25%;
+    --female-primary: 340 65% 60%;
+    --female-secondary: 340 55% 25%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Dark Gradients */
+    --gradient-bg: linear-gradient(135deg, hsl(220 25% 8%), hsl(220 20% 12%));
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Interactive Dark States */
+    --popover: 220 25% 12%;
+    --popover-foreground: 220 15% 92%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --primary: 220 15% 92%;
+    --primary-foreground: 220 25% 8%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --secondary: 220 20% 18%;
+    --secondary-foreground: 220 15% 85%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 220 20% 15%;
+    --muted-foreground: 220 15% 65%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --accent: 220 20% 18%;
+    --accent-foreground: 220 15% 92%;
+
+    --destructive: 0 65% 55%;
+    --destructive-foreground: 220 15% 92%;
+
+    --border: 220 20% 20%;
+    --input: 220 20% 18%;
+    --ring: 220 15% 75%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -100,6 +147,121 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    background: var(--gradient-bg);
+    min-height: 100vh;
+    direction: rtl;
   }
+
+  [dir="ltr"] {
+    direction: ltr;
+  }
+
+  /* Hebrew Typography */
+  .hebrew-text {
+    font-family: 'Arial Hebrew', 'David', 'Narkisim', Arial, sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+  }
+
+  /* Glassmorphism Base */
+  .glass {
+    background: hsl(var(--glass-background));
+    backdrop-filter: blur(12px);
+    border: 1px solid hsl(var(--glass-border));
+  }
+
+  /* Premium Shadows */
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+
+  .shadow-floating {
+    box-shadow: var(--shadow-floating);
+  }
+
+  /* Animation Classes */
+  .animate-gentle-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-slide-up {
+    animation: slide-up 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer utilities {
+  /* Family Tree Specific Utilities */
+  .male-theme {
+    --node-primary: var(--male-primary);
+    --node-secondary: var(--male-secondary);
+    --node-glass: var(--male-glass);
+    --node-glow: var(--shadow-glow-male);
+  }
+
+  .female-theme {
+    --node-primary: var(--female-primary);
+    --node-secondary: var(--female-secondary);
+    --node-glass: var(--female-glass);
+    --node-glow: var(--shadow-glow-female);
+  }
+
+  /* Premium Gradients */
+  .bg-gradient-male {
+    background: var(--gradient-male);
+  }
+
+  .bg-gradient-female {
+    background: var(--gradient-female);
+  }
+
+  .bg-gradient-connection {
+    background: var(--gradient-connection);
+  }
+}
+
+/* Keyframe Animations */
+@keyframes gentle-pulse {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes slide-up {
+  from { 
+    opacity: 0; 
+    transform: translateY(24px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* React Flow Customizations */
+.react-flow {
+  background: transparent;
+  direction: ltr;
+}
+
+.react-flow__node {
+  font-family: inherit;
+}
+
+.react-flow__edge-path {
+  stroke: hsl(var(--heritage-bronze));
+  stroke-width: 2;
+  filter: drop-shadow(0 2px 4px hsl(var(--heritage-bronze) / 0.3));
 }
